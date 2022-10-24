@@ -1,0 +1,10 @@
+https://korp.csc.fi/download/
+
+https://metashare.csc.fi/repository/browse/classics-of-finnish-literature-vrt/b879f230ce9d11e7b652005056be118e2bc828a55623409b96380e7eaae783dc/
+
+tools: https://www.kielipankki.fi/tyokalut/
+
+sanavektoreita? https://kielipankki.fi/tools/demo/download/index.html
+
+# compile corpus
+https://www.gutenberg.org/browse/languages/fi
