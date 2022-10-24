@@ -76,3 +76,4 @@ def find_similar(word:str, embedding_dict:dict, top_n=10)->list:
                 })
 
         return sorted(dist_dict.items(), key=lambda x: x[1])[0:top_n]       
+        
