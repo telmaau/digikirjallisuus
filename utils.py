@@ -97,7 +97,7 @@ import re
 import advertools as adv
 
 stopwords=adv.stopwords['finnish']
-print(sorted(stopwords)[:5])
+
 import spacy
 nlp= spacy.load("fi_core_news_sm")
 
