@@ -92,12 +92,19 @@ def mattr(words, window_size=100):
     return mattr
 
 
+import glob
+import re
+import advertools as adv
+
+stopwords=adv.stopwords['finnish']
+print(sorted(stopwords)[:5])
+
 def clean_text(
     txt: str, 
     nlp,
     punctuations=r'''!()-[]{};:'"\,<>./?@#$%^&*_~''',
-    stop_words=None,
-    processing="lemmas",
+    stop_words=stopwords,
+    processing="lemmas"
     ) -> str:
     
     """
@@ -106,7 +113,8 @@ def clean_text(
 
     if processing == "lemmas":
       doc = nlp(txt)
-      lemmas=[token.lemma_ for token in doc if token.pos_ != "PUNCT"]
+      #lemmas=[token.lemma_ for token in doc if token.pos_ != "PUNCT"]
+      lemmas=[token.lemma_ for token in doc if token.pos_ in ["VERB", "NOUN" ,"ADJ" ,"ADV"]]
       string=" ".join([l for l in lemmas if len(l)>2]) # vain sanat, jotka yli kaksi kirjainta pitkiä
 
     elif processing =="none":
@@ -142,4 +150,4 @@ def clean_text(
     # Cleaning the whitespaces
     string = re.sub(r'\s+', ' ', string).strip()
 
-    return string   
+    return string    
