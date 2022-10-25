@@ -9,62 +9,7 @@ import sklearn.feature_extraction.text as text
 # helper functions
 import glob
 import re
-import advertools as adv
 
-stopwords=adv.stopwords['finnish']
-print(sorted(stopwords)[:5])
-
-def clean_text(
-    txt: str, 
-    punctuations=r'''!()-[]{};:'"\,<>./?@#$%^&*_~''',
-    stop_words=stopwords,
-    processing="lemmas"
-    ) -> str:
-    
-    """
-    A method to clean text 
-    """
-
-    if processing == "lemmas":
-        doc = nlp(txt)
-        #lemmas=[token.lemma_ for token in doc if token.pos_ != "PUNCT"]
-        lemmas=[token.lemma_ for token in doc if token.pos_ in ["VERB", "NOUN" ,"ADJ" ,"ADV"]]
-        string=" ".join([l for l in lemmas if len(l)>2]) # vain sanat, jotka yli kaksi kirjainta pitkiä
-
-    elif processing =="none":
-        # Cleaning the urls
-        string = re.sub(r'https?://\S+|www\.\S+', '', txt)
-
-        # Cleaning the html elements
-        string = re.sub(r'<.*?>', '', string)
-
-        # Removing the punctuations
-        for x in string.lower(): 
-            if x in punctuations: 
-                string = string.replace(x, "") 
-
-    else:
-        # Cleaning the urls
-        string = re.sub(r'https?://\S+|www\.\S+', '', txt)
-
-        # Cleaning the html elements
-        string = re.sub(r'<.*?>', '', string)
-
-        txt=txt.translate(translate_table)
-        stems = stemmer.stem(txt)
-
-        string=" ".join([s for s in stems.split() if len(s)>1])
-
-    # Converting the text to lower
-    string = string.lower()
-
-    # Removing stop words
-    string = ' '.join([word for word in string.split() if word not in stop_words])
-
-    # Cleaning the whitespaces
-    string = re.sub(r'\s+', ' ', string).strip()
-
-    return string  
 
 def load_texts(filenames, max_length):
     documents, authors, titles = [], [], []
