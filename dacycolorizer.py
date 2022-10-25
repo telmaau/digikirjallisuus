@@ -10,7 +10,7 @@
 
 from typing import Iterable
 from spacy.tokens import Token
-from sentidav2.constants import read_lexicon
+from digikirjallisuus.sentidav2.constants import read_lexicon
 LEXICON=read_lexicon(dictionary="vader")
 
 from spacy import displacy

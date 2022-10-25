@@ -1,6 +1,6 @@
 from numpy import *
 import numpy as np
-import saffine.detrending_method as dm
+import digikirjallisuus.saffine.detrending_method as dm
 # from numba import jit
 
 # @jit

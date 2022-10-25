@@ -1,10 +1,10 @@
 from importlib import reload
-import saffine
-reload(saffine)
+#import digikirjallisuus.saffine
+#reload(saffine)
 import numpy as np
 import re
-import saffine.multi_detrending as md
-import saffine.detrending_method as dm
+import digikirjallisuus.saffine.multi_detrending as md
+import digikirjallisuus.saffine.detrending_method as dm
 from scipy.stats import norm
 import matplotlib.pyplot as plt
 

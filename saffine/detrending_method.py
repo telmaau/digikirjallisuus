@@ -1,6 +1,6 @@
 from numpy import *
 import numpy as np
-import saffine.detrending_coeff as dc
+import digikirjallisuus.saffine.detrending_coeff as dc
 # from numba import jit
 
 # @jit
