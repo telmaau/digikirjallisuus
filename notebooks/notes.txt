@@ -8,3 +8,28 @@ sanavektoreita? https://kielipankki.fi/tools/demo/download/index.html
 
 # compile corpus
 https://www.gutenberg.org/browse/languages/fi
+
+
+finnish embeddings
+http://dl.turkunlp.org/finnish-embeddings/
+
+
+Burroughs
+Austen
+Coyne, Arthur ?
+Victor Hugo?
+Maupassant
+Ilmari Kianto
+Aleksis Kivi
+Lagerlöf selma
+Montgomery
+Onerva, L.
+August Strinberg
+Anni Swan
+Tolstoi Leo
+Topelius
+Mark Twain
+Jules Verne
+Emile Zola
+
+text 1 = topelius
