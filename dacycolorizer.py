@@ -52,7 +52,7 @@ from spacy.tokens import Span
 from spacy import displacy
 
 
-from sentidav2.getters import make_span_polarity_getter
+from digikirjallisuus.sentidav2.getters import make_span_polarity_getter
 
 Span.set_extension(
     "polarity",
